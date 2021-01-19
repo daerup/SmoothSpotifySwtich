@@ -23,6 +23,11 @@ namespace SmoothSpotifySwtich.SpotifyApi
             return availableDevices.Devices.Select(this.GetISpotifyDeviceFromDevice);
         }
 
+        public ISpotifyDevice GetPlayingISpotifyDevice()
+        {
+            return this.GetISpotifyDeviceFromDevice((this.client.Player.GetAvailableDevices().Result).Devices.First(d => d.IsActive));
+        }
+
         private ISpotifyDevice GetISpotifyDeviceFromDevice(Device device)
         {
             return new SpotifyDevice(device.Name, device.Id, this.GetDeviceTypeFromString(device.Type));
@@ -36,6 +41,11 @@ namespace SmoothSpotifySwtich.SpotifyApi
                 case "Computer": return SpotifyDeviceType.Computer;
                 default: return SpotifyDeviceType.Unknown;
             }
+        }
+
+        public async Task<bool> TrySwitchOutputTo(ISpotifyDevice device)
+        {
+            return await this.client.Player.TransferPlayback(new PlayerTransferPlaybackRequest(new List<string>{device.Id}));
         }
     }
 
