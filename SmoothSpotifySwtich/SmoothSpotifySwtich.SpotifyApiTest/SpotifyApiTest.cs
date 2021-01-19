@@ -12,7 +12,7 @@ namespace SmoothSpotifySwtich.SpotifyApiTest
 
 
         [Fact]
-        public async Task GetDevicesReturnsAllConnectedDevices()
+        public async Task GetDevicesShouldReturnAllConnectedDevices()
         {
             // Act
             IEnumerable<ISpotifyDevice> devices = await this.testee.GetDevices();
