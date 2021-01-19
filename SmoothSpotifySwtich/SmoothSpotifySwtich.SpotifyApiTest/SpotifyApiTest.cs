@@ -8,7 +8,11 @@ namespace SmoothSpotifySwtich.SpotifyApiTest
 {
     public class SpotifyApiTest
     {
-        SpotifyApi.SpotifyApi testee = new SpotifyApi.SpotifyApi("");
+        /// <summary>
+        ///  Get Token from Here: https://developer.spotify.com/console/get-users-available-devices/
+        /// user-read-playback-state & user-modify-playback-state are necessary 
+        /// </summary>
+        SpotifyApi.SpotifyApi testee = new SpotifyApi.SpotifyApi("look at summery");
 
 
         [Fact]
