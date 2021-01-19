@@ -2,18 +2,31 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using SmoothSpotifySwtich.Interfaces;
 using SpotifyAPI.Web;
+using SpotifyAPI.Web.Auth;
+
 
 namespace SmoothSpotifySwtich.SpotifyApi
 {
     public class SpotifyApi
     {
+        private static EmbedIOAuthServer authServer;
+        readonly ManualResetEvent waitForAuthProcess = new ManualResetEvent(false);
         private SpotifyClient client;
-        public SpotifyApi(string token)
+        private readonly string cliendId;
+        private readonly int callBackPort;
+        private readonly string callBackUrl;
+
+        public SpotifyApi()
         {
-            this.client = new SpotifyClient(token);
+            this.cliendId = ":P";
+            this.callBackPort = 6969;
+            this.callBackUrl = $"http://localhost:{this.callBackPort}/callback";
+            this.AskUserForPermission();
         }
 
         public async Task<IEnumerable<ISpotifyDevice>> GetDevices()
@@ -46,6 +59,30 @@ namespace SmoothSpotifySwtich.SpotifyApi
         public async Task<bool> TrySwitchOutputTo(ISpotifyDevice device)
         {
             return await this.client.Player.TransferPlayback(new PlayerTransferPlaybackRequest(new List<string>{device.Id}));
+        }
+
+        public void AskUserForPermission()
+        {
+            this.waitForAuthProcess.Reset();
+            authServer = new EmbedIOAuthServer(new Uri(this.callBackUrl), this.callBackPort);
+            authServer.Start().GetAwaiter().GetResult();
+
+            authServer.ImplictGrantReceived += this.OnImplicitGrantReceived;
+
+            LoginRequest request = new LoginRequest(authServer.BaseUri, this.cliendId, LoginRequest.ResponseType.Token)
+            {
+                Scope = new List<string> { Scopes.UserModifyPlaybackState, Scopes.UserReadPlaybackState }
+            };
+            BrowserUtil.Open(request.ToUri());
+
+            this.waitForAuthProcess.WaitOne();
+        }
+
+        private async Task OnImplicitGrantReceived(object sender, ImplictGrantResponse response)
+        {
+            await authServer.Stop();
+            this.client = new SpotifyClient(response.AccessToken);
+            this.waitForAuthProcess.Set();
         }
     }
 
