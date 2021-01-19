@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.UserInterface", "SmoothSpotifySwtich.UserInterface\SmoothSpotifySwtich.UserInterface.csproj", "{51AF5953-DCF0-46E2-BE2E-1DFB3AD3E793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmoothSpotifySwtich.UserInterface", "SmoothSpotifySwtich.UserInterface\SmoothSpotifySwtich.UserInterface.csproj", "{51AF5953-DCF0-46E2-BE2E-1DFB3AD3E793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.SpotifyApi", "SmoothSpotifySwtich.SpotifyApi\SmoothSpotifySwtich.SpotifyApi.csproj", "{CEAC8896-F307-46BC-B280-CCA14C9D8BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmoothSpotifySwtich.SpotifyApi", "SmoothSpotifySwtich.SpotifyApi\SmoothSpotifySwtich.SpotifyApi.csproj", "{CEAC8896-F307-46BC-B280-CCA14C9D8BCF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{059396EA-E54D-4F83-9871-945874636AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.SpotifyApiTest", "SmoothSpotifySwtich.SpotifyApiTest\SmoothSpotifySwtich.SpotifyApiTest.csproj", "{2E2E3D01-9954-40C1-831B-9909B25EA731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmoothSpotifySwtich.SpotifyApiTest", "SmoothSpotifySwtich.SpotifyApiTest\SmoothSpotifySwtich.SpotifyApiTest.csproj", "{2E2E3D01-9954-40C1-831B-9909B25EA731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.Interfaces", "SmoothSpotifySwtich.Interfaces\SmoothSpotifySwtich.Interfaces.csproj", "{61692C5F-73B8-4151-8D89-92562E57DE98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{2E2E3D01-9954-40C1-831B-9909B25EA731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E2E3D01-9954-40C1-831B-9909B25EA731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E2E3D01-9954-40C1-831B-9909B25EA731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61692C5F-73B8-4151-8D89-92562E57DE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61692C5F-73B8-4151-8D89-92562E57DE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61692C5F-73B8-4151-8D89-92562E57DE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61692C5F-73B8-4151-8D89-92562E57DE98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

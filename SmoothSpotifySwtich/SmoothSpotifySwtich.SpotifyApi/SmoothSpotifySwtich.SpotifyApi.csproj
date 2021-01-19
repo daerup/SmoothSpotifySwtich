@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SpotifyAPI.Web" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmoothSpotifySwtich.Interfaces\SmoothSpotifySwtich.Interfaces.csproj" />
+    <ProjectReference Include="..\SmoothSpotifySwtich.UserInterface\SmoothSpotifySwtich.UserInterface.csproj" />
+  </ItemGroup>
+
 </Project>
