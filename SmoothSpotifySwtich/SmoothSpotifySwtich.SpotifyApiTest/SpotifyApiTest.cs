@@ -12,14 +12,14 @@ namespace SmoothSpotifySwtich.SpotifyApiTest
         ///  Get Token from Here: https://developer.spotify.com/console/get-users-available-devices/
         /// user-read-playback-state & user-modify-playback-state are necessary 
         /// </summary>
-        SpotifyApi.SpotifyApi testee = new SpotifyApi.SpotifyApi("look at summery");
+        static SpotifyApi.SpotifyApi testee = new SpotifyApi.SpotifyApi();
 
 
         [Fact]
         public async Task GetDevicesShouldReturnAllConnectedDevices()
         {
             // Act
-            IEnumerable<ISpotifyDevice> devices = await this.testee.GetDevices();
+            IEnumerable<ISpotifyDevice> devices = await testee.GetDevices();
 
             // Assert
             devices.Should().NotBeEmpty();
@@ -29,12 +29,12 @@ namespace SmoothSpotifySwtich.SpotifyApiTest
         public async Task SwitchingOutputDeviceDoesSomething()
         {
             // Arrange
-            var playingDevice = this.testee.GetPlayingISpotifyDevice();
-            List<ISpotifyDevice> spotifyDevices = (await this.testee.GetDevices()).ToList();
+            var playingDevice = testee.GetPlayingISpotifyDevice();
+            List<ISpotifyDevice> spotifyDevices = (await testee.GetDevices()).ToList();
             ISpotifyDevice deviceToSwitchTo = spotifyDevices.First(d => d.Id != playingDevice.Id);
 
             // Act
-            bool switchingStatus = await this.testee.TrySwitchOutputTo(deviceToSwitchTo);
+            bool switchingStatus = await testee.TrySwitchOutputTo(deviceToSwitchTo);
 
             // Assert
             switchingStatus.Should().BeTrue();
@@ -45,7 +45,7 @@ namespace SmoothSpotifySwtich.SpotifyApiTest
         public async Task AtLeastTwoDevicesAreConnected()
         {
             // Act
-            List<ISpotifyDevice> spotifyDevices = (await this.testee.GetDevices()).ToList();
+            List<ISpotifyDevice> spotifyDevices = (await testee.GetDevices()).ToList();
 
             // Arrange
             spotifyDevices.Count.Should().BeGreaterOrEqualTo(2, "but only contains {0}", spotifyDevices.First().Name);
