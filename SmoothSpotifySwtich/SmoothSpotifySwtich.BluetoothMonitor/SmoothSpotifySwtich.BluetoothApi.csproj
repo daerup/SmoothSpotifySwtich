@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <AssemblyName>SmoothSpotifySwtich.BluetoothApi</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="32feet.NET" Version="3.5.0" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmoothSpotifySwtich.Interfaces\SmoothSpotifySwtich.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Runtime.WindowsRuntime">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

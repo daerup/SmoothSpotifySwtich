@@ -11,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{059396EA-E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmoothSpotifySwtich.SpotifyApiTest", "SmoothSpotifySwtich.SpotifyApiTest\SmoothSpotifySwtich.SpotifyApiTest.csproj", "{2E2E3D01-9954-40C1-831B-9909B25EA731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.Interfaces", "SmoothSpotifySwtich.Interfaces\SmoothSpotifySwtich.Interfaces.csproj", "{61692C5F-73B8-4151-8D89-92562E57DE98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmoothSpotifySwtich.Interfaces", "SmoothSpotifySwtich.Interfaces\SmoothSpotifySwtich.Interfaces.csproj", "{61692C5F-73B8-4151-8D89-92562E57DE98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.BluetoothApi", "SmoothSpotifySwtich.BluetoothMonitor\SmoothSpotifySwtich.BluetoothApi.csproj", "{9F57C6F8-C514-4EA7-81C0-3244A6DFCF9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothSpotifySwtich.BluetoothMonitorTest", "SmoothSpotifySwtich.BluetoothMonitorTest\SmoothSpotifySwtich.BluetoothMonitorTest.csproj", "{B737EF2F-EF01-4198-8FEF-D13655C64265}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +39,21 @@ Global
 		{61692C5F-73B8-4151-8D89-92562E57DE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61692C5F-73B8-4151-8D89-92562E57DE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61692C5F-73B8-4151-8D89-92562E57DE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F57C6F8-C514-4EA7-81C0-3244A6DFCF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F57C6F8-C514-4EA7-81C0-3244A6DFCF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F57C6F8-C514-4EA7-81C0-3244A6DFCF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F57C6F8-C514-4EA7-81C0-3244A6DFCF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B737EF2F-EF01-4198-8FEF-D13655C64265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B737EF2F-EF01-4198-8FEF-D13655C64265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B737EF2F-EF01-4198-8FEF-D13655C64265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B737EF2F-EF01-4198-8FEF-D13655C64265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2E2E3D01-9954-40C1-831B-9909B25EA731} = {059396EA-E54D-4F83-9871-945874636AB7}
+		{B737EF2F-EF01-4198-8FEF-D13655C64265} = {059396EA-E54D-4F83-9871-945874636AB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F86B717-7468-4234-8B9F-38EAF8BD08FC}
